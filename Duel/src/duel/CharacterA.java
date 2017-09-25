@@ -3,6 +3,8 @@ package duel;
 public class CharacterA implements Dueler{
 		//later: the taunt must be different each time the method is called		
 		private int hp;
+		private boolean load;
+		private boolean round;
 		public void taunt() {
 			System.out.println("I'm taunting you. Ha.");
 		}
@@ -34,10 +36,18 @@ public class CharacterA implements Dueler{
 		//return the action chosen for this round
 		//Object is the object calling this method. Use it to verify your opponent is not trying to gain the upperhand by figuring out what you are doing.
 		public int getAction(Object caller) {
-			int rand;
-			rand = (int)(Math.random()*3);
-			return rand;
-		}
+			int currentNum;
+			currentNum = 3;
+			if(!(caller instanceof Duel)) {
+				currentNum = 3;
+				return currentNum;
+			}
+			if(currentNum == 0) {
+				load = true;
+				return (int)(Math.random()*2 + 1);}
+			else
+				return (int)(Math.random()*2);
+			}
 		
 		
 		//this method is called when you get hit. In the game, if you get hit, you lose 10 hp
