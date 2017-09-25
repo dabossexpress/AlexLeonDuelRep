@@ -27,10 +27,10 @@ public class CharacterB implements Dueler{
 	}
 	public int getAction(Object caller) {
 		if (caller != this)
-			return 0;
+			return 3;
 		else
 			// to be edited later
-			return 0;
+			return (int) Math.round((Math.random()*3));
 	}
 
 	public void hit(Object caller) {
