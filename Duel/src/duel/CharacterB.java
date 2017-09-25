@@ -26,11 +26,7 @@ public class CharacterB implements Dueler{
 		
 	}
 	public int getAction(Object caller) {
-		if (caller != this)
-			return 3;
-		else
-			// to be edited later
-			return (int)(Math.random()*2);
+			return (int)(Math.random()*3);
 	}
 
 	public void hit(Object caller) {
