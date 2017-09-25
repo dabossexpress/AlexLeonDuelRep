@@ -2,6 +2,7 @@ package duel;
 
 public class CharacterA implements Dueler{
 		//later: the taunt must be different each time the method is called		
+		private int hp;
 		public void taunt() {
 			System.out.println("I'm taunting you. Ha.");
 		}
@@ -33,7 +34,7 @@ public class CharacterA implements Dueler{
 		//return the action chosen for this round
 		//Object is the object calling this method. Use it to verify your opponent is not trying to gain the upperhand by figuring out what you are doing.
 		public int getAction(Object caller) {
-			
+			return 0;
 		}
 		
 		
