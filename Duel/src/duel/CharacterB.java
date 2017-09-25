@@ -2,6 +2,7 @@ package duel;
 
 public class CharacterB implements Dueler{
 	private int hp;
+	private boolean loaded;
 	public CharacterB() {
 		
 	}
@@ -14,6 +15,7 @@ public class CharacterB implements Dueler{
 	}
 	public void setStartingHP(int hp) {
 		this.hp = hp;
+		loaded = false;
 	}
 	public int getHP() {
 		return hp;
@@ -26,14 +28,42 @@ public class CharacterB implements Dueler{
 		
 	}
 	public int getAction(Object caller) {
+		
 			if(!(caller instanceof Duel))
 			{
 				return 3;
 			}
 			else
 			{
-				return (int)(Math.random()*3);
-				
+				if (this.hp>50)
+				{
+					if (!loaded)
+					{
+						return 0;
+					}
+					else
+					{
+						return 1;
+					}
+				}
+				else
+				{
+					if(Math.random()<0.5)
+					{
+						if (!loaded)
+						{
+							return 0;
+						}
+						else
+						{
+							return 1;
+						}
+					}
+					else
+					{
+						return 2;
+					}
+				}
 			}
 	}
 
