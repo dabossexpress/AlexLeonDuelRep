@@ -32,18 +32,7 @@ public class CharacterB implements Dueler{
 			}
 			else
 			{
-				int rand = (int) Math.random();
-				if (rand>0.5)
-					return 2;
-				else
-				{
-					if (rand>0.3)
-						return 0;
-					else 
-					{
-						return 1;
-					}
-				}
+				return (int)(Math.random()*3);
 				
 			}
 	}
