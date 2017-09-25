@@ -30,7 +30,7 @@ public class CharacterB implements Dueler{
 			return 3;
 		else
 			// to be edited later
-			return (int)(Math.random()*3);
+			return (int)(Math.random()*2);
 	}
 
 	public void hit(Object caller) {
