@@ -34,7 +34,9 @@ public class CharacterA implements Dueler{
 		//return the action chosen for this round
 		//Object is the object calling this method. Use it to verify your opponent is not trying to gain the upperhand by figuring out what you are doing.
 		public int getAction(Object caller) {
-			return 0;
+			int rand;
+			rand = (int)(Math.random()*3);
+			return rand;
 		}
 		
 		
