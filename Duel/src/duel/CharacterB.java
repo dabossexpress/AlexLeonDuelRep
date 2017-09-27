@@ -29,7 +29,7 @@ public class CharacterB implements Dueler{
 	}
 	public int getAction(Object caller) {
 		
-			if(!(caller instanceof Duel))
+			/*if(!(caller instanceof Duel))
 			{
 				return 3;
 			}
@@ -65,7 +65,26 @@ public class CharacterB implements Dueler{
 					}
 				}
 			}
-	}
+	}*/
+		if(!(caller instanceof Duel))
+		{
+			return 3;
+		}
+		else
+		{
+				if (!loaded)
+				{
+					loaded = !loaded;
+					return 0;
+				}
+				if(Math.random()<0.5 && loaded == true)
+				{
+						loaded = false;
+						return 1;
+					}
+				else
+				{
+					return 2;}}}
 
 	public void hit(Object caller) {
 		if (caller instanceof Duel) {

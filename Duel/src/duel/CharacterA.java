@@ -3,7 +3,7 @@ package duel;
 public class CharacterA implements Dueler{
 		//later: the taunt must be different each time the method is called		
 		private int hp;
-		private boolean load;
+		private boolean loaded = false;
 		public void taunt() {
 			System.out.println("I'm taunting you. Ha.");
 		}
@@ -16,7 +16,6 @@ public class CharacterA implements Dueler{
 		//set the value of a field. Write this in such a way that it can only be called once (by the Duel, at the start)
 		public void setStartingHP(int hp) {
 			this.hp = hp;
-			load = false;
 		}
 		public int getHP() {
 			return hp;
@@ -36,7 +35,7 @@ public class CharacterA implements Dueler{
 		//return the action chosen for this round
 		//Object is the object calling this method. Use it to verify your opponent is not trying to gain the upperhand by figuring out what you are doing.
 		public int getAction(Object caller) {
-			if(!(caller instanceof Duel)) {
+			/*if(!(caller instanceof Duel)) {
 				return 3;
 			}
 			else {
@@ -62,9 +61,26 @@ public class CharacterA implements Dueler{
 						}
 					}
 			}
-		}
-				
-		
+		}*/
+			if(!(caller instanceof Duel))
+			{
+				return 3;
+			}
+			else
+			{
+					if (!loaded)
+					{
+						loaded = !loaded;
+						return 0;
+					}
+					if(Math.random()<0.5 && loaded == true)
+					{
+							loaded = false;
+							return 1;
+						}
+					else
+					{
+						return 2;}}}
 		
 		//this method is called when you get hit. In the game, if you get hit, you lose 10 hp
 		//this method body should only be executed if Object is an instance of Duel
