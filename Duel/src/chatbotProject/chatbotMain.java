@@ -4,7 +4,7 @@ import strings.Scanner;
 public class chatbotMain {
 
 	
-	public static Chatbot chatbot = new Chatbot();
+	public static Chatbot chatbot = new Chatbot(); // static means independent of instances. By making it a static variable, it can be accessed anywhere in the program by anyone at anytime. Shows current state of the program.
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		chatbot.startTalking();
@@ -52,7 +52,7 @@ public class chatbotMain {
 	  
 	  public static void multiLinePrint(String s){
 	    String printString = "";
-	 int cutoff = 25;
+	 int cutoff = 55;
 	 //this while loop last as long as there are words left in the original String
 	 while(s.length() > 0){
 
