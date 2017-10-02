@@ -45,7 +45,14 @@ public class Utility{
   }
   
   public static boolean noNegations(String s, int psn){
-    return true;
+    if(s.substring(psn -2, psn+1).equals("not")){
+    	return false;
+    }
+    if(s.substring(psn -1, psn+1).equals("not"))
+    	return false;
+    else {
+    	return true;
+    }
   }
   
   
